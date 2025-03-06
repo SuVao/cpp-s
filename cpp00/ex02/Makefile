@@ -1,9 +1,8 @@
 CC = g++
 NAME = Account
-SRC = Account.cpp
+SRC = Account.cpp tests.cpp
 OBJ = $(SRC:.cpp=.o)
-
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
