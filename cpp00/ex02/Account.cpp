@@ -9,20 +9,17 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-void	Account::_displayTimestamp() 
+void Account::_displayTimestamp()
 {
-    //std::time_t t = std::time(NULL);
-    //std::tm* now = std::localtime(&t);
+    std::time_t t = std::time(NULL);
+    std::tm* now = std::localtime(&t);
 
-	int year = 1992, month = 1, day = 4;
-    int hour = 9, minute = 15, second = 32;
-
-    std::cout << "[" << (year)
-              << std::setfill('0') << std::setw(2) << month
-              << std::setfill('0') << std::setw(2) << day << "_"
-              << std::setfill('0') << std::setw(2) << hour
-              << std::setfill('0') << std::setw(2) << minute
-              << std::setfill('0') << std::setw(2) << second << "] ";
+    std::cout << "[" << (now->tm_year + 1900)
+              << std::setfill('0') << std::setw(2) << (now->tm_mon + 1)
+              << std::setfill('0') << std::setw(2) << now->tm_mday << "_"
+              << std::setfill('0') << std::setw(2) << now->tm_hour
+              << std::setfill('0') << std::setw(2) << now->tm_min
+              << std::setfill('0') << std::setw(2) << now->tm_sec << "] ";
 }
 
 void    Account::makeDeposit(int deposit)
