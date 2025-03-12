@@ -2,7 +2,7 @@ CC = g++
 NAME = Zombie
 SRC = main.cpp \
 	  Zombie.cpp \
-	  zombieHorder.cpp
+	  zombieHorde.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
