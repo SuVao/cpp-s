@@ -4,19 +4,16 @@
 
 #include <string>
 #include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-
-
 
 class Weapon {
 	private:
 	std::string string;
-	
 	public:
-	std::string getType(void) const;
+	Weapon(std::string string) : string(string){};
+	~Weapon();
+	const std::string& getType(void) const;
 	void setType(std::string new_str);
-	
+
 };
 
 
