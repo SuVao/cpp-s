@@ -7,11 +7,11 @@ Weapon::~Weapon(){};
 
 const std::string& Weapon::getType(void) const
 {
-	return string;
+	return m_string;
 }
 
 void	Weapon::setType(std::string new_str)
 {
-	string = new_str;
+	m_string = new_str;
 }
 
