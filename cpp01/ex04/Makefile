@@ -1,9 +1,9 @@
 NAME = Sed
 CC = g++
 SRC = main.cpp \
-	  sed.cpp \
+	  sed.cpp 
 OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 

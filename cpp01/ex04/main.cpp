@@ -3,14 +3,8 @@
 
 int main(int ac, char **av)
 {
-	if (ac != 4)
-		return -1;
-	std::ifstream file(av[1]);
-	if (!file)
-	{
-		std::cout << "file not found\n";
-		return -1;
-	}
-	
+	if (ac == 4)
+		s_and_replace(av[1], av[2], av[3]);
+	return (0);	
 }
 
