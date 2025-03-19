@@ -25,7 +25,7 @@ void s_and_replace(const std::string& av1, const std::string& av2, const std::st
 	while (std::getline(file, line))
 	{
 		std::string new_line;
-		size_t i = 0, end;
+		size_t i = 0, end = 0;
 		while ((i = line.find(av2, end)) != std::string::npos)
 		{
 			new_line.append(line, end, i - end);

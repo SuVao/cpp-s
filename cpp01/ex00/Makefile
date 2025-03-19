@@ -1,8 +1,8 @@
-CC = g++
+CC = c++
 NAME = Zombie
 SRC = main.cpp \
 	  newZombie.cpp \
-	  randomChump.cpp 
+	  randomChump.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

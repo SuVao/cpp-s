@@ -1,4 +1,4 @@
-CC = g++
+CC = c++
 NAME = String
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)

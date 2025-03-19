@@ -1,9 +1,7 @@
-NAME = Start
 CC = c++
+NAME = Harl
 SRC = main.cpp \
-	  HumanA.cpp \
-	  HumanB.cpp \
-	  Weapon.cpp
+	  Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

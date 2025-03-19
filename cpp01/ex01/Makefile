@@ -1,4 +1,4 @@
-CC = g++
+CC = c++
 NAME = Zombie
 SRC = main.cpp \
 	  Zombie.cpp \
