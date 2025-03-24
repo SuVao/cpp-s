@@ -1,6 +1,15 @@
 
 #include "Harl.hpp"
 
+enum levels
+{
+	DEBUG,
+	INFO,
+	WARNING,
+	ERROR
+};
+
+
 void    Harl::info( void )
 {
 	std::cout << "[INFO]" << std::endl;
@@ -29,21 +38,25 @@ void    Harl::error( void )
 
 void    Harl::complain( std::string level )
 {
-    std::string level1[] = { "WARNING", "DEBUG", "INFO", "ERROR" };
-	void (Harl::*functions[])() = { &Harl::warning, &Harl::debug, &Harl::info, &Harl::error};
-	int flag = 0;
-
-	//switch case
-
-	for (int i = 0; i < 4; i++)	
+    std::string level1[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+	for (int i = 0; i < 4; i++)
 	{
-		if (level1[i] == level || flag == 1)
+		if (level1[i] == level)
 		{
-			(this->*functions[i])();
-			flag = 1;
-			if (i == 3)
-				return ;
+			switch (i)
+			{
+				case DEBUG:
+					this->debug();	/* fall through */
+				case INFO:
+					this->info(); /* fall through */
+				case WARNING:
+					this->warning(); /* fall through */
+				case ERROR:
+					this->error();
+					return;
+			}
 		}
 	}
-	std::cout << "Level not founded!" << std::endl;
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	
 }

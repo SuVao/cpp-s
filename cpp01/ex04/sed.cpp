@@ -35,4 +35,6 @@ void s_and_replace(const std::string& av1, const std::string& av2, const std::st
 		new_line.append(line, end);
 		outpfile << new_line << "\n";
 	}
+	//file.close();
+	//outpfile.close();
 }
