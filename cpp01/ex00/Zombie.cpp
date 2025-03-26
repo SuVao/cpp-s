@@ -8,7 +8,7 @@ Zombie::Zombie(std::string input)
 
 Zombie::~Zombie(void)
 {
-    std::cout << name << " foi destruído!" << std::endl;
+    std::cout << name << " was destroyed!" << std::endl;
 }
 
 std::string Zombie::get_name(void)
