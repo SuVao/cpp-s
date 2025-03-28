@@ -15,5 +15,10 @@ int main()
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl; */
+
+	float a = 5.7 / (1 << 8);
+	int b = static_cast<int>(5.9f) >> 8;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 	return 0;
 }

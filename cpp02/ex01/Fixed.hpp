@@ -9,12 +9,13 @@
 class Fixed
 {
 private:
-    int data;
-    static const int nbr;
+    int _fixedPoint;
+    static const int _fractionalBits = 8;
 public:
     Fixed();
+    Fixed(const int fixedPoint);
+    Fixed(const float floatingPoint);
     ~Fixed();
-    Fixed(const int nbr); // copy constroctor
     Fixed& operator=(const Fixed& other); // copy assignment operator
     int    getRawBits( void ) const;
     void    setRawBits( int const raw);
