@@ -9,16 +9,18 @@
 class Fixed
 {
 private:
-    int _fixedPoint;
+    int              _fixedPoint;
     static const int _fractionalBits = 8;
 public:
     Fixed();
     Fixed(const int fixedPoint);
     Fixed(const float floatingPoint);
-    ~Fixed();
+    Fixed(const Fixed& other);
     Fixed& operator=(const Fixed& other); // copy assignment operator
-    int    getRawBits( void ) const;
-    void    setRawBits( int const raw);
+    ~Fixed();
+    float toFloat( void ) const;
+    int toInt( void ) const;
+    friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 };
 
 
