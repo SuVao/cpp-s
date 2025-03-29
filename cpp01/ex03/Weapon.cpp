@@ -1,8 +1,8 @@
 
 #include "Weapon.hpp"
 
-//Weapon::Weapon(std::string string) : string(string){};
-//
+Weapon::Weapon(const std::string& string) : m_string(string){}
+
 Weapon::~Weapon(){};
 
 const std::string& Weapon::getType(void) const
