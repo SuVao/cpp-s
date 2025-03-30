@@ -22,6 +22,7 @@ void s_and_replace(const std::string& av1, const std::string& av2, const std::st
 		return ;
 	}
 	std::string line;
+	std::cin >> line;
 	while (std::getline(file, line))
 	{
 		std::string new_line;
@@ -35,4 +36,5 @@ void s_and_replace(const std::string& av1, const std::string& av2, const std::st
 		new_line.append(line, end);
 		outpfile << new_line << "\n";
 	}
+	std::istringstream 
 }
