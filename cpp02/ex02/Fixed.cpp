@@ -81,27 +81,27 @@ const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2)
 
 Fixed& Fixed::operator++()
 {
-	_fixedPoint += (1 << _fractionalBits);
+	_fixedPoint += 1;
 	return (*this);
 }
 
 Fixed& Fixed::operator--()
 {
-	_fixedPoint -= (1 << _fractionalBits);
+	_fixedPoint -= 1;
 	return (*this);
 }
 
 Fixed Fixed::operator--(int)
 {
 	Fixed tmp = *this;
-	this->_fixedPoint -= (1 << _fractionalBits);
+	this->_fixedPoint -= 1;
 	return tmp;
 }
 
 Fixed Fixed::operator++(int)
 {
 	Fixed tmp = *this;
-	this->_fixedPoint += (1 << _fractionalBits);
+	this->_fixedPoint += 1;
 	return tmp;
 }
 
