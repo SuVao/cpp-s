@@ -7,14 +7,16 @@
 class Point
 {
 	private:
-	const Fixed x;
-	const Fixed y;
+	Fixed const x;
+	Fixed const y;
 	public:
 	Point();
 	Point(const float& x, const float& y);
 	Point(const Point& other);
 	~Point();
-    friend std::ostream& operator<<(std::ostream& os, const Point& other);
+	Point& operator=(const Point& other);
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
