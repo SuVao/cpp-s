@@ -1,8 +1,8 @@
 CC = c++
-NAME = Fixed
+NAME = Point
 SRC = main.cpp \
 	  Fixed.cpp \
-	  bsq.cpp \
+	  bsp.cpp \
 	  Point.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98

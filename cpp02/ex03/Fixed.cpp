@@ -55,7 +55,7 @@ Fixed Fixed::operator*(const Fixed& fixed) const
 Fixed Fixed::operator/(const Fixed& fixed) const
 {
 	Fixed res;
-	res._fixedPoint = (this->_fixedPoint * fixed._fixedPoint) >> _fractionalBits;
+	res._fixedPoint = (this->_fixedPoint << _fractionalBits) / fixed._fixedPoint;
 	return (res);
 }
 
