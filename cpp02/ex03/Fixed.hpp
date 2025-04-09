@@ -1,10 +1,10 @@
-
 #ifndef Fixed_HPP
 #define Fixed_HPP
 
 #include <ostream>
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed
 {
@@ -21,6 +21,28 @@ public:
     float toFloat( void ) const;
     int toInt( void ) const;
     friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
+	
+	bool operator>(const Fixed& fixed) const;
+	bool operator<(const Fixed& fixed) const;
+	bool operator>=(const Fixed& fixed) const;
+	bool operator<=(const Fixed& fixed) const;
+	bool operator==(const Fixed& fixed) const;
+	bool operator!=(const Fixed& fixed) const;
+
+	Fixed operator+(const Fixed& fixed) const;
+	Fixed operator-(const Fixed& fixed) const;
+	Fixed operator*(const Fixed& fixed) const;
+	Fixed operator/(const Fixed& fixed) const;
+
+	Fixed& operator++();
+	Fixed& operator--();
+	Fixed operator++(int);
+	Fixed operator--(int);
+
+	Fixed& min( Fixed& fixed1, Fixed& fixed2);
+	static const Fixed& min(const Fixed& fixed1, const Fixed& fixed2);
+	Fixed& max( Fixed& fixed1, Fixed& fixed2);
+	static const Fixed& max(const Fixed& fixed1, const Fixed& fixed2);
 };
 
 
