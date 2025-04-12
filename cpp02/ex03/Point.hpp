@@ -23,5 +23,6 @@ class Point
 bool zero_area(Point const a, Point const b, Point const c, Point const point);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 Fixed area( Point const a, Point const b, Point const c );
+//std::ostream& operator<<(std::ostream& os, const Point& point);
 
 #endif

@@ -17,11 +17,11 @@ Point& Point::operator=(const Point& other)
 	return (*this);
 }
 
-Point::Point(const Point& other) : x(other.x), y(other.y) {}
+Point::Point(const Point& other) : x(const_cast<Fixed&>(other.x)), y(const_cast<Fixed&>(other.y)) {}
 
 Fixed Point::operator*(const Point& other) const
 {
-	return (this->x * other.y) - (this->y * other.x);
+	return (x * other.y) - (y * other.x);
 }
 
 Fixed Point::get_x() const
@@ -33,3 +33,10 @@ Fixed Point::get_y() const
 {
 	return y;
 }
+
+/* std::ostream& operator<<(std::ostream& os, const Point& point)
+{
+    os << point;
+	return os;
+}
+ */

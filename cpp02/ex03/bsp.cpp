@@ -6,54 +6,27 @@ Fixed area( Point const a, Point const b, Point const c )
 {
 	Fixed res;
 
-	
-	res = ((a.get_x().toFloat() * (b.get_y().toFloat() - c.get_y().toFloat())) \
-			+ (b.get_x().toFloat() * (c.get_y().toFloat() - a.get_y().toFloat())) \
-			+ (c.get_x().toFloat() * (a.get_y().toFloat() - b.get_y().toFloat())));
-	if (res < 0)
-		res = res * -1;
-	return (res / Fixed(2));
+	res = ((a.get_x() * (b.get_y() - c.get_y()))
+		+ (b.get_x() * (c.get_y() - a.get_y()))
+		+ (c.get_x() * (a.get_y() - b.get_y())) ) / 2;
+	if (res < Fixed(0))
+		res = res * Fixed(-1);
+	return (res);
 }
-/*
-Como saber se está dentro?
-É como se dividíssemos o triângulo em três triângulos menores:
-Um triângulo que junta o point, o 
-𝐵
-B e o 
-𝐶
-C.
-Outro que junta o point, o 
-𝐴
-A e o 
-𝐶
-C.
-E outro que junta o point, o 
-𝐴
-A e o 
-𝐵
-B.
-Ou seja, cada vez usamos o point e dois dos três vértices.
-Depois fazemos isto:
-Calculamos a área do triângulo original 
-𝐴
-𝐵
-𝐶
-ABC.
-Calculamos a área dos três triângulos pequenos que fizemos com o point.
-Se a soma das três áreas pequenas for igual à área do triângulo original e nenhuma área
-for zero (ou seja, o ponto não está em cima da linha), então o point está dentro.*/
+
 
 bool zero_area(Point const a, Point const b, Point const c, Point const point)
 {
 	if (area(a, b, point) == 0 || area(a, c, point) == 0 || area(c, b, point) == 0)
-		return true;
-	return (false);
+		return (false);
+	return (true);
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	if (area(a, b, c) == (area(a, b, point) + area(a, c, point) + area(c, b, point)) &&
-	!zero_area(a, b, c, point))
+	zero_area(a, b, c, point))
 		return ( true );
+	std::cout << area(a, b, point) + area(a, c, point) + area(c, b, point) << std::endl;
 	return (false);
 }

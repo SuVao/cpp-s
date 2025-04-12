@@ -1,5 +1,6 @@
 
 #include "Fixed.hpp"
+#include <exception>
 
 int main( void ) 
 {
@@ -14,6 +15,16 @@ int main( void )
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 	//std::cout << Fixed::min( a, b ) << std::endl;
-	
+
+/* 	float res;
+
+	res = 2.2 * 5.5;
+
+	std::cout << res << std::endl;
+
+	Fixed a( Fixed( 2.2f ) * Fixed( 5.5f ));
+
+	std::cout << a << std::endl; */
+
 	return 0;
 }

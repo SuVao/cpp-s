@@ -31,32 +31,33 @@ bool Fixed::operator!=(const Fixed& fixed) const
 	return (this->_fixedPoint != fixed._fixedPoint);
 }
 
-Fixed Fixed::operator+(const Fixed& fixed) const
+double Fixed::operator+(const Fixed& fixed) const
 {
-	Fixed res;
-	res._fixedPoint = this->_fixedPoint + fixed._fixedPoint;
-	return (res);
+	return _fixedPoint + fixed._fixedPoint;
 }
 
-Fixed Fixed::operator-(const Fixed& fixed) const
+double Fixed::operator-(const Fixed& fixed) const
 {
-	Fixed res;
-	res._fixedPoint = this->_fixedPoint - fixed._fixedPoint;
-	return (res);
+	return _fixedPoint - fixed._fixedPoint;
 }
 
 Fixed Fixed::operator*(const Fixed& fixed) const
 {
 	Fixed res;
-	res._fixedPoint = (this->_fixedPoint * fixed._fixedPoint) >> _fractionalBits;
+	res._fixedPoint = (_fixedPoint * fixed._fixedPoint) >> _fractionalBits;
 	return (res);
 }
 
 Fixed Fixed::operator/(const Fixed& fixed) const
 {
 	Fixed res;
-	res._fixedPoint = (this->_fixedPoint * fixed._fixedPoint) >> _fractionalBits;
-	return (res);
+	if (fixed == 0)
+	{
+		std::cout << "Cant divide by zero.";
+		exit(-1);
+	}
+	res._fixedPoint = (_fixedPoint << _fractionalBits) / fixed._fixedPoint;
+	return res;
 }
 
 Fixed& Fixed::min( Fixed& fixed1, Fixed& fixed2)
