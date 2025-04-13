@@ -1,9 +1,15 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string& name1) : health(10), energy(10), att(0), name(name1) {}
+ClapTrap::ClapTrap(const std::string& name1) : health(10), energy(10), att(0), name(name1) 
+{
+	std::cout << "eafault constrocter called!" << std::endl;
+}
 
-ClapTrap::~ClapTrap(){}
+ClapTrap::~ClapTrap()
+{
+	std::cout << "Destrocter called!" << std::endl;
+}
 
 void ClapTrap::attack(const std::string& target)
 {

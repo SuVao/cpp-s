@@ -27,6 +27,5 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	if (area(a, b, c) == (area(a, b, point) + area(a, c, point) + area(c, b, point)) &&
 	zero_area(a, b, c, point))
 		return ( true );
-	std::cout << area(a, b, point) + area(a, c, point) + area(c, b, point) << std::endl;
 	return (false);
 }
