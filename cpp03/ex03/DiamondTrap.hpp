@@ -5,9 +5,16 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
+private:
+	std::string name;
 public:
+	DiamondTrap(const std::string& name1);
+	~DiamondTrap();
+
+	void whoAmI();
+	void	Attack(std::string target);
 
 };
 

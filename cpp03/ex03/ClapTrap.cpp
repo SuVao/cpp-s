@@ -33,22 +33,33 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (health == 0)
 	{
-		std::cout << "ClapTrap is dead\n";
+		std::cout << "ClapTrap is dead!\n";
 		return;
 	}
-	health -= amount;
+	int ori = health;
+	int am = amount;
+	if (ori - am <= 0)
+		health = 0;
+	else
+		health -= amount;
 	std::cout << "ClapTrap " << name << " takes " << amount
-              << " points of damage. Health is now " << health << ".\n";
+              << " points of damage.";
+	if (health != 0)
+		std::cout << "Health is now " << health << ".\n";
+	else
+		std::cout << "ClapTrap is dead!\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (health == 0)
 	{
-		std::cout << "ClapTrap is dead\n";
+		std::cout << "ClapTrap is dead!\n";
 		return;
 	}
-	if (health > 0 && energy > 0)
+	long h = health;
+	long e = energy;
+	if (h > 0 && e > 0)
 	{
 		std::cout << "ClapTrap " << name << " repairs itself for "
 				  << amount << " points. Health is now " << health << ".\n";
