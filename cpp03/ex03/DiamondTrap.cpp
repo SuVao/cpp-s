@@ -8,10 +8,13 @@ DiamondTrap::DiamondTrap(const std::string& name1) : ClapTrap(name1 + "_clap_nam
 	health = FragTrap::health;
 	energy = ScavTrap::energy;
 	att = FragTrap::att;
-	std::cout << "DiamondTrap Constructer named " << name1 << " was called!" << std::endl; 
+	std::cout << "DiamondTrap Constructer named " << name1 << " called!" << std::endl; 
 }
 
-DiamondTrap::~DiamondTrap() {}
+DiamondTrap::~DiamondTrap() 
+{
+	std::cout << "Destructer DiamondTrap called!\n";
+}
 
 void	DiamondTrap::whoAmI()
 {
@@ -19,7 +22,7 @@ void	DiamondTrap::whoAmI()
 	std::cout << "ClapTrap name: " << ClapTrap::name << std::endl;
 }
 
-void	DiamondTrap::Attack(std::string target)
+void	DiamondTrap::attack(std::string target)
 {
 	ScavTrap::attack(target);
 }
