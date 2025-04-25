@@ -3,7 +3,7 @@
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-	std::cout << "Default Constructer ScavTrap called!\n";
+	std::cout << "Constructer ScavTrap called!\n";
 	health = 100;
 	energy = 100;
 	att = 30;

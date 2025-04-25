@@ -3,12 +3,12 @@
 
 ClapTrap::ClapTrap(const std::string& name1) : name(name1), health(10), energy(10), att(0)
 {
-	std::cout << "Dafault constructer called!" << std::endl;
+	std::cout << "Constructer ClapTrap called!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructer called!" << std::endl;
+	std::cout << "Destructer ClapTrap called!" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

@@ -3,7 +3,7 @@
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) 
 {
-	std::cout << "Default Construter called!\n";
+	std::cout << "Constructer ScavTrap called!\n";
 	health = 100;
 	energy = 50;
 	att = 20;
@@ -11,7 +11,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap() 
 {
-	std::cout << "Destructer called\n";
+	std::cout << "Destructer ScavTrap called\n";
 }
 
 void ScavTrap::guardGate()
