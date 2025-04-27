@@ -1,4 +1,6 @@
 
+#pragma once
+
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
@@ -10,11 +12,12 @@
 class Animal
 {
 protected:
-	std::string name;
+	std::string type;
 public:
-	Animal(std::string name);
+	Animal(std::string type);
 	~Animal();
 	void makeSound(void);
+	void getType();
 };
 
 #endif
