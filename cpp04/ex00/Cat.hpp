@@ -1,3 +1,4 @@
+#pragma once
 
 #ifndef CAT_HPP
 #define CAT_HPP
@@ -7,7 +8,9 @@
 class Cat : public Animal
 {
 public:
-	void getType();
+	Cat();
+	~Cat();
+	void makeSound() const;
 };
 
 #endif

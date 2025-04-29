@@ -1,5 +1,5 @@
 CC = c++
-NAME = FragTrap
+NAME = Polymorphism
 SRC = main.cpp \
 	  Animal.cpp \
 	  Dog.cpp \

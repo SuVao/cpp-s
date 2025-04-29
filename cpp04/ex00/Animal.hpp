@@ -8,16 +8,21 @@
 #include <iostream>
 #include <string>
 
-
 class Animal
 {
 protected:
 	std::string type;
 public:
-	Animal(std::string type);
-	~Animal();
-	void makeSound(void);
-	void getType();
+	Animal();
+	Animal(const std::string& type);
+	virtual ~Animal();
+	void makeSound(void) const;
+	virtual std::string getType() const;
+	Animal& operator=(const Animal& );
+
 };
+
+std::ostream& operator<<(std::ostream os, const Animal& Animal);
+
 
 #endif
