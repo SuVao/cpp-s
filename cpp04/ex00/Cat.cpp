@@ -8,7 +8,7 @@ Cat::Cat() : Animal("Cat")
 
 Cat::~Cat()
 {
-	std::cout << "Default Constructor called!\n";
+	std::cout << "Cat destructor called!\n";
 }
 
 void	Cat::makeSound() const
