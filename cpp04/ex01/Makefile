@@ -6,7 +6,7 @@ SRC = main.cpp \
 	  Cat.cpp \
 	  Brain.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 

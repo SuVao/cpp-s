@@ -4,6 +4,7 @@
 
 Dog::Dog() : Animal("Dog")
 {
+	_brain = new Brain;
 	std::cout << "Dog Constructor called\n";
 }
 
@@ -31,4 +32,17 @@ Dog& Dog::operator=(const Dog& other)
 void Dog::makeSound() const
 {
 	std::cout << "au au!\n";
+}
+
+std::string Dog::getIdea_d(unsigned int n) const 
+{
+    if (_brain && n < 100)
+        return _brain->getIdea(n);
+    return "";
+}
+
+void Dog::setIdea_d(unsigned int n, const std::string& new_idea)
+{
+    if (_brain && n < 100)
+        _brain->setIdea(n, new_idea);
 }
