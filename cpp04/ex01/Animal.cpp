@@ -30,12 +30,7 @@ std::string Animal::getType() const
 
 void	Animal::makeSound() const
 {
-	if (getType() == "Dog")
-		std::cout << "au au!\n";
-	else if (getType() == "Cat")
-		std::cout << "Cats dont bark!\n";
-	else
-		std::cout << "Im here!\n";
+	std::cout << "Im an Animal\n";
 }
 
 std::ostream& operator<<(std::ostream& os, const Animal& t)
