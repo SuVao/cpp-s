@@ -3,7 +3,9 @@ NAME = AMatirial
 SRC = main.cpp \
 	  AMateria.cpp \
 	  Ice.cpp \
-	  Cure.cpp
+	  Cure.cpp	\
+	  ICharacter.cpp \
+	  IMaterialSource.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 

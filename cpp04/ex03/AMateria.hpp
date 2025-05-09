@@ -21,6 +21,4 @@ public:
 	virtual AMateria *clone() const = 0; //Returns a new instance of the same type
 	virtual void use(ICharacter &target); //Uses the materia on the target character
 };
-
-
 #endif

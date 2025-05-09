@@ -2,9 +2,9 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-AMateria::AMateria(const std::string& type1) : type(type1)
+AMateria::AMateria(std::string const & type1) : type(type1)
 {
-    std::cout << "Default constructor called!\n";
+    std::cout << "AMateria constructor called!\n";
 }
 
 AMateria::AMateria(const AMateria& other) : type(other.type)
@@ -23,7 +23,7 @@ AMateria& AMateria::operator=(const AMateria& copy)
     return *this;
 }
 
-const std::string& AMateria::getType() const
+void   AMateria::use(ICharacter &target)
 {
-    return type;
+    
 }

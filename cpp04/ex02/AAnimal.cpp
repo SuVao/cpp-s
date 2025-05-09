@@ -11,7 +11,7 @@ AAnimal::AAnimal(const std::string& type1) : type(type1)
 	std::cout << "Default constructor called!\n";
 }
 
-AAAnimal& AAnimal::operator=(const AAnimal& )
+AAnimal& AAnimal::operator=(const AAnimal& )
 {
 	return *this;
 }

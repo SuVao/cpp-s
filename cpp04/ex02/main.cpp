@@ -13,15 +13,18 @@ int main() {
         delete AAnimals[i];
 
     // Teste deep copy
-    Dog basic;
-    basic.setIdea_d(0, "Chase the cat");
-
-    Dog copy = basic;
-    copy.setIdea_d(0, "Eat food");
+    Dog *basic = new Dog();
+    Dog n;
+    basic->setIdea_d(0, "Chase the cat");
+    n = *basic;
+    delete(basic);
+    n.getIdea_d(0);
+    /* Dog copy = *basic;
+    copy.setIdea_d(0, "Eat food"); */
 
     // Deve imprimir ideias diferentes
-    std::cout << "Basic idea: " << basic.getIdea_d(0) << std::endl;
-    std::cout << "Copy idea: " << copy.getIdea_d(0) << std::endl;
+   // std::cout << "Basic idea: " << basic.getIdea_d(0) << std::endl;
+    //std::cout << "Copy idea: " << copy.getIdea_d(0) << std::endl;
 
     return 0;
 }
