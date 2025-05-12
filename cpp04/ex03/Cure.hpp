@@ -6,17 +6,13 @@
 
 #include "AMateria.hpp"
 
-class Cure : public AMateria
+class Cure : virtual public AMateria
 {
-    protected:
-        std::string type;
-    public:
-        Cure();
-        Cure(const Cure &copy);
-        Cure &operator=(const Cure &copy);
-        virtual ~Cure();
-        virtual AMateria* clone() const;
-        virtual void use(ICharacter& target);
+public:
+    Cure();
+    virtual ~Cure();
+	Cure& operator=(const AMateria& copy);
+	AMateria* clone() const;
 };
 
 #endif

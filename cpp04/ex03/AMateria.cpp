@@ -1,21 +1,11 @@
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
-AMateria::AMateria(std::string const & type1) : type(type1)
-{
-    std::cout << "AMateria constructor called!\n";
-}
+AMateria::AMateria(std::string const & type1) : type(type1) {}
 
-AMateria::AMateria(const AMateria& other) : type(other.type)
-{
-    std::cout << "AMateria copy constructor called!\n";
-}
+AMateria::AMateria(const AMateria& other) : type(other.type) {}
 
-AMateria::~AMateria()
-{
-    std::cout << "Default AMateria destructor called\n";
-}
+AMateria::~AMateria() {}
 
 AMateria& AMateria::operator=(const AMateria& copy)
 {
@@ -25,5 +15,12 @@ AMateria& AMateria::operator=(const AMateria& copy)
 
 void   AMateria::use(ICharacter &target)
 {
-    
+    if (getType() == "ice")
+		std::cout << "* shoots an ice bolt at " << target.getName() << "*\n";
+	if (getType() == "cure")
+		std::cout << "* heals " << target.getName() << "'s wounds *\n"; 
+}
+std::string const & AMateria::getType() const
+{
+	return (type);
 }

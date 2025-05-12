@@ -1,21 +1,15 @@
 
 #pragma once
 
-#ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
+#include "Interfaces.hpp"
+#include "Character.hpp"
 #include <string>
 #include <iostream>
 
-class IMateriaSource 
-{
-public:
-    virtual ~IMateriaSource() {}
-    virtual void learnMateria(AMateria*) = 0;
-    virtual AMateria* createMateria(std::string const & type) = 0;
-};
 
 class MateriaSource : public IMateriaSource
 {
@@ -23,8 +17,11 @@ private:
     AMateria* materiaStore[4];
 public:
     MateriaSource();
+    ~MateriaSource();
     void    learnMateria(AMateria* materia);
     AMateria* createMateria(std::string const & type);
+	MateriaSource& operator=(const MateriaSource& other);
+	MateriaSource(const MateriaSource& other);
 };
 
 #endif

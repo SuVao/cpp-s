@@ -31,7 +31,7 @@ Cat& Cat::operator=(const Cat& other)
 		AAnimal::operator=(other);
 		if (_brain)
 			 delete _brain;
-		_brain = new Brain(*other._brain);
+		_brain = new Brain(*other._brain); //getideias for copy
 	}
 	return *this;
 }

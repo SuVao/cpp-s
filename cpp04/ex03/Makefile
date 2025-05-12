@@ -4,8 +4,10 @@ SRC = main.cpp \
 	  AMateria.cpp \
 	  Ice.cpp \
 	  Cure.cpp	\
+	  Character.cpp \
 	  ICharacter.cpp \
-	  IMaterialSource.cpp
+	  MateriaSource.cpp \
+	  Interfaces.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
