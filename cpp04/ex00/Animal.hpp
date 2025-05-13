@@ -16,10 +16,9 @@ public:
 	Animal();
 	Animal(const std::string& type);
 	virtual ~Animal();
-	void makeSound(void) const;
+	virtual void makeSound(void) const;
 	virtual std::string getType() const;
 	Animal& operator=(const Animal& );
-
 };
 
 std::ostream& operator<<(std::ostream os, const Animal& Animal);
