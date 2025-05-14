@@ -30,7 +30,7 @@ std::string Animal::getType() const
 
 void	Animal::makeSound() const
 {
-	std::cout << "Im an Animal\n";
+	std::cout << "Normaly only Animal don't have a especific sound\n";
 }
 
 std::ostream& operator<<(std::ostream& os, const Animal& t)
