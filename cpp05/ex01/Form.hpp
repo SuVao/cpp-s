@@ -23,11 +23,11 @@ public:
 	Form(const Form& other);
 	Form(const std::string& name1, int grade_signe1, int grade_lvl1);
 	Form& operator=(const Form& other);
-	void beSigned(Bureaucrat a);
-	const std::string getName() const;
+	Form& beSigned(Bureaucrat a);
+	std::string getName() const;
 	bool getSigne() const;
-	const int getGrade_lvl() const;
-	const int getGrade_signe() const;
+	int getGrade_lvl() const;
+	int getGrade_signe() const;
 	class GradeTooHighException : public std::exception
 	{
 		virtual const char* what() const throw();

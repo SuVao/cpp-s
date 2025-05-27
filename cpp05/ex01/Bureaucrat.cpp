@@ -67,12 +67,13 @@ void Bureaucrat::incrementGrade()
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade_lvl(other.grade_lvl)
 {}
 
-void Bureaucrat::signForm(const Form& a)
+void Bureaucrat::signForm(Form& a)
 {
-	if (grade_lvl > a.getGrade_lvl() && grade_lvl > a.getGrade_signe())
-	{
-		Form::GradeTooLowException();
-		return ;
-	}
-	a.signe = true;
+	try {
+        a.beSigned(*this);
+        std::cout << name << " signed " << a.getName() << std::endl;
+    } catch (std::exception& e) {
+        std::cout << name << " couldn't sign " << a.getName()
+                  << " because " << e.what() << std::endl;
+    }
 }

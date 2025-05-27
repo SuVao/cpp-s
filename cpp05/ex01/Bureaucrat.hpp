@@ -9,6 +9,8 @@
 #include <stdexcept>
 #include "Form.hpp"
 
+class Form;
+
 class Bureaucrat
 {
 private:
@@ -24,7 +26,7 @@ public:
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
-	void signForm(const Form& a);
+	void signForm(Form& a);
 	class GradeTooHighException: public std::exception
 	{
 		virtual const char* what() const throw();
