@@ -1,26 +1,44 @@
 CC = c++
 NAME = Bureaucrat
-SRC = main.cpp \
-	  Bureaucrat.cpp \
-	  Form.cpp
-	  
-OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+SRC_DIR = src
+OBJDIR = obj
+ASMDIR = asm
+INCDIR = inc
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g -I$(INCDIR)
+
+SRC = $(SRC_DIR)/main.cpp \
+      $(SRC_DIR)/Bureaucrat.cpp \
+      $(SRC_DIR)/Form.cpp
+
+OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
+ASM = $(SRC:$(SRC_DIR)/%.cpp=$(ASMDIR)/%.s)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+ass: $(ASMDIR) $(ASM)
+
+$(OBJDIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(ASMDIR)/%.s: $(SRC_DIR)/%.cpp | $(ASMDIR)
+	$(CC) -S -O2 $(CFLAGS) $< -o $@
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(ASMDIR):
+	mkdir -p $(ASMDIR)
+
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(ASMDIR)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re ass
