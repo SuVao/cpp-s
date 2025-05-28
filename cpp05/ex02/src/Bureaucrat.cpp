@@ -15,6 +15,7 @@ Bureaucrat::Bureaucrat(const std::string& name1, int lvl) : name(name1)
 	else if (lvl < 1) 
 		throw Bureaucrat::GradeTooHighException();
 	grade_lvl = lvl;
+	std::cout << "Bureaucrat named " << name << " was called!\n";
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
@@ -80,7 +81,14 @@ void Bureaucrat::signForm(AForm& a)
 
 void Bureaucrat::executeForm(AForm& a)
 {
-	if (!a.getSigne())
-		signForm(a);
-	if (a.getSigne() && getGrade() > a.)
+	try
+	{
+		a.execute(*this); 
+		std::cout << name << " executed " << a.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << name << " couldn't execute " << a.getName()
+		          << " because " << e.what() << std::endl;
+	}
 }

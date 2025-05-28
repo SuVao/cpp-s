@@ -7,6 +7,9 @@
 #include <string>
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include <fstream>
+#include <cstdlib>  // std::rand, std::srand
+#include <ctime> 
 
 class Bureaucrat;
 
@@ -29,12 +32,16 @@ public:
 	int getGrade_lvl() const;
 	int getGrade_signe() const;
 
-	virtual void exe_AForm(const Bureaucrat& exe) = 0;
+	virtual void execute(const Bureaucrat& executor) const = 0;
 	class GradeTooHighException : public std::exception
 	{
 		virtual const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
+	{
+		virtual const char* what() const throw();
+	};
+	class FormNotSignedException : public std::exception
 	{
 		virtual const char* what() const throw();
 	};

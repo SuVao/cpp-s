@@ -71,3 +71,8 @@ std::ostream& operator<<(std::ostream& os, AForm& e)
 		<< ", grade to execute: " << e.getGrade_lvl();
 	return os;
 }
+
+const char* AForm::FormNotSignedException::what() const throw()
+{
+	return "Form cannot be executed because it is not signed.";
+}

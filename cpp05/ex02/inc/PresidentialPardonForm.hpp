@@ -9,11 +9,15 @@
 
 class PresidentialPardonForm : public AForm
 {
+private:
+	const std::string target;
 public:
 	PresidentialPardonForm();
+	//PresidentialPardonForm(const std::string& name, int signe, int exe);
 	PresidentialPardonForm(const std::string& name);
 	~PresidentialPardonForm();
-	void exe_AForm(const Bureaucrat& exe);
+	void  execute(Bureaucrat const & executor) const;
+	
 };
 
 #endif
