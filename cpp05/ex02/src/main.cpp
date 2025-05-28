@@ -16,15 +16,15 @@ int main()
 
         std::cout << "\n--- Testing ShrubberyCreationForm ---" << std::endl;
         tom.signForm(shrubForm);
-        tom.exe_AForm(shrubForm); // Tom pode assinar, mas não executar
+        tom.executeForm(shrubForm); // Tom pode assinar, mas não executar
 
         std::cout << "\n--- Testing RobotomyRequestForm ---" << std::endl;
         bob.signForm(robotForm);
-        bob.exe_AForm(robotForm);
+        bob.executeForm(robotForm);
 
         std::cout << "\n--- Testing PresidentialPardonForm ---" << std::endl;
         bob.signForm(pardonForm);
-        bob.exe_AForm(pardonForm);
+        bob.executeForm(pardonForm);
     }
     catch (const std::exception& e) {
         std::cerr << "Caught Exception: " << e.what() << std::endl;

@@ -11,6 +11,7 @@ class PresidentialPardonForm : public AForm
 {
 public:
 	PresidentialPardonForm();
+	PresidentialPardonForm(const std::string& name);
 	~PresidentialPardonForm();
 	void exe_AForm(const Bureaucrat& exe);
 };
