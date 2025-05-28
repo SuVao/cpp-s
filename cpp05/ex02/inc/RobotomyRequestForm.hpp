@@ -11,6 +11,7 @@ class RobotomyRequestForm : public AForm
 {
 public:
 	RobotomyRequestForm();
+	RobotomyRequestForm(const std::string& name);
 	~RobotomyRequestForm();
 	void exe_AForm(const Bureaucrat& exe);
 };

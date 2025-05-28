@@ -1,5 +1,5 @@
 
-#include "inc/Bureaucrat.hpp"
+#include "../inc/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default"), grade_lvl(150) {}
 
@@ -76,4 +76,11 @@ void Bureaucrat::signForm(AForm& a)
         std::cout << name << " couldn't sign " << a.getName()
                   << " because " << e.what() << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm& a)
+{
+	if (!a.getSigne())
+		signForm(a);
+	if (a.getSigne() && getGrade() > a.)
 }

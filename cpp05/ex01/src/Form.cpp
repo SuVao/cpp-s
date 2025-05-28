@@ -1,5 +1,5 @@
 
-#include "inc/Form.hpp"
+#include "../inc/Form.hpp"
 
 Form::Form() : name("Default"), signe(false), grade_signe(150), grade_lvl_exe(150){}
 

@@ -1,6 +1,6 @@
 #include <iostream>
-#include "inc/Bureaucrat.hpp"
-#include "inc/Form.hpp"
+#include "../inc/Bureaucrat.hpp"
+#include "../inc/Form.hpp"
 
 int main() {
     try 
@@ -22,3 +22,5 @@ int main() {
 
     return 0;
 }
+
+

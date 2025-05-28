@@ -1,5 +1,5 @@
 
-#include "inc/Bureaucrat.hpp"
+#include "../inc/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default"), grade_lvl(150) {}
 

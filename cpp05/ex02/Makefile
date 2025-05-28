@@ -9,10 +9,10 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -g -I$(INCDIR)
 
 SRC = $(SRC_DIR)/main.cpp \
       $(SRC_DIR)/Bureaucrat.cpp \
-      $(SRC_DIR)/ASMForm.cpp \
+      $(SRC_DIR)/AForm.cpp \
       $(SRC_DIR)/PresidentialPardonForm.cpp \
-      $(SRC_DIR)/RobottomyRequestForm.cpp \
-      $(SRC_DIR)/ShrubberyCreation.cpp \
+      $(SRC_DIR)/RobotomyRequestForm.cpp \
+      $(SRC_DIR)/ShrubberyCreationForm.cpp \
 
 OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJDIR)/%.o)
 ASM = $(SRC:$(SRC_DIR)/%.cpp=$(ASMDIR)/%.s)
