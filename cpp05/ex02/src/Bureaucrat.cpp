@@ -67,7 +67,7 @@ void Bureaucrat::incrementGrade()
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade_lvl(other.grade_lvl)
 {}
 
-void Bureaucrat::signForm(Form& a)
+void Bureaucrat::signForm(AForm& a)
 {
 	try {
         a.beSigned(*this);

@@ -1,8 +1,8 @@
 
 #pragma once
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AForm_HPP
+#define AForm_HPP
 
 #include <string>
 #include <iostream>
@@ -10,7 +10,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
 	const std::string name;
@@ -18,16 +18,18 @@ private:
 	const int grade_signe;
 	const int grade_lvl_exe;
 public:
-	Form();
-	~Form();
-	Form(const Form& other);
-	Form(const std::string& name1, int grade_signe1, int grade_lvl1);
-	Form& operator=(const Form& other);
-	Form& beSigned(Bureaucrat a);
+	AForm();
+	virtual ~AForm();
+	AForm(const AForm& other);
+	AForm(const std::string& name1, int grade_signe1, int grade_lvl1);
+	AForm& operator=(const AForm& other);
+	AForm& beSigned(Bureaucrat a);
 	std::string getName() const;
 	bool getSigne() const;
 	int getGrade_lvl() const;
 	int getGrade_signe() const;
+
+	virtual void exe_AForm(const Bureaucrat& exe) = 0;
 	class GradeTooHighException : public std::exception
 	{
 		virtual const char* what() const throw();
@@ -38,6 +40,6 @@ public:
 	};
 };
 
-std::ostream& operator<<(std::ostream& os, Form& e);
+std::ostream& operator<<(std::ostream& os, AForm& e);
 
 #endif
