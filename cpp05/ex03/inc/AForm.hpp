@@ -31,7 +31,7 @@ public:
 	bool getSigne() const;
 	int getGrade_lvl() const;
 	int getGrade_signe() const;
-
+ 	AForm(const std::string& target);
 	virtual void execute(const Bureaucrat& executor) const = 0;
 	class GradeTooHighException : public std::exception
 	{

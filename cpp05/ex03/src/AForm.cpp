@@ -1,6 +1,8 @@
 
 #include "../inc/AForm.hpp"
 
+AForm::AForm(const std::string& target) : name(target), signe(false), grade_signe(150), grade_lvl_exe(150){}
+
 AForm::AForm() : name("Default"), signe(false), grade_signe(150), grade_lvl_exe(150){}
 
 AForm::~AForm(){ std::cout << "AForm destructor called\n";}
