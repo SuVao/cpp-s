@@ -26,7 +26,7 @@ public:
 	AForm(const AForm& other);
 	AForm(const std::string& name1, int grade_signe1, int grade_lvl1);
 	AForm& operator=(const AForm& other);
-	virtual AForm& beSigned(Bureaucrat a) = 0;
+	virtual AForm& beSigned(Bureaucrat a);
 	std::string getName() const;
 	bool getSigne() const;
 	int getGrade_lvl() const;

@@ -5,7 +5,8 @@
 #include "../inc/AForm.hpp"
 #include "../inc/Intern.hpp"
 
-int main() {
+int main()
+{
 	try {
 		Intern intern;
 		Bureaucrat boss("Boss", 1);  // 1 é a nota mais alta

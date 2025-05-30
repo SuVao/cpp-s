@@ -5,21 +5,37 @@ Intern::Intern(){}
 
 Intern::~Intern(){}
 
+AForm* createRobotomy(const std::string& target)
+{
+	return new RobotomyRequestForm(target);
+}
+
+AForm* createShrubbery(const std::string& target) 
+{
+	return new ShrubberyCreationForm(target);
+}
+
+AForm* createPresidential(const std::string& target) 
+{
+	return new PresidentialPardonForm(target);
+}
 
 AForm* Intern::makeForm(const std::string& form, const std::string& target)
 {
 	std::string formNames[3] = { "robotomy request", "shrubberycreation form", "presidentialpardon form" };
 
-	AForm* (*formCreators[3])(const std::string&) = {
-		[](const std::string& t) -> AForm* { return new RobotomyRequestForm(t); },
-		[](const std::string& t) -> AForm* { return new ShrubberyCreationForm(t); },
-		[](const std::string& t) -> AForm* { return new PresidentialPardonForm(t); }
+	AForm* (*creators[3])(const std::string&) = {
+		&createRobotomy,
+		&createShrubbery,
+		&createPresidential,
 	};
 
-	for (int i = 0; i < 3; ++i) {
-		if (form == formNames[i]) {
+	for (int i = 0; i < 3; ++i)
+	{
+		if (form == formNames[i])
+		{
 			std::cout << "Intern creates " << form << std::endl;
-			return formCreators[i](target);
+			return creators[i](target);
 		}
 	}
 
