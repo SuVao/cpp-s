@@ -17,6 +17,11 @@ public:
     ~Intern();
     //Intern(const Intern& other);
     AForm* makeForm(const std::string& form, const std::string& target);
+
+	class TheFormDontExist : public std::exception
+	{
+		virtual const char* what() const throw();
+	};
 };
 
 #endif
