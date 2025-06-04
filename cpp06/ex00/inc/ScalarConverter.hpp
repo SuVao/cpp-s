@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include <limits>
 
 class ScalarConverter
 {
@@ -19,6 +20,7 @@ public:
     double getDouble(const std::string& a);
     float getFloat(const std::string& a);
     char getChar(const std::string& a);
+    bool is_int(const std::string& a);
 
     
 };
