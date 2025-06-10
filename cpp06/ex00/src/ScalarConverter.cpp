@@ -1,33 +1,34 @@
 
 #include "../inc/ScalarConverter.hpp"
 
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) 
+/* ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) 
 {
+    *this = other;
     return *this;
 }
-
+ */
 ScalarConverter::~ScalarConverter() { std::cout << "ScalarConverter destructor called\n";}
 
-int ScalarConverter::getInt(const std::string& a)
+int ScalarConverter::getInt()
 {
-   return std::strtol(a.c_str(), NULL, 10);
+   return static_cast<int>(std::strtol(type.c_str(), NULL, 10));
 }
 
-double ScalarConverter::getDouble(const std::string& a)
+double ScalarConverter::getDouble()
 {
-    return std::strtod(a.c_str(), NULL);    
+    return static_cast<double>(std::strtod(type.c_str(), NULL));    
 }
 
-float ScalarConverter::getFloat(const std::string& a)
+float ScalarConverter::getFloat()
 {
-    return std::strtof(a.c_str(), NULL);
+    return static_cast<float>(std::strtof(type.c_str(), NULL));
 }
 
-char ScalarConverter::getChar(const std::string& a)
+char ScalarConverter::getChar()
 {
-    if (a.length() == 3 && a[0] == '\'' && a[2] == '\'')
-        return a[1];
-    return a[0];
+    if (type.length() == 3 && type[0] == '\'' && type[2] == '\'')
+        return type[1];
+    return static_cast<char>(type[0]);
 }
 
 bool ScalarConverter::is_int(const std::string& a)
@@ -60,7 +61,7 @@ bool ScalarConverter::is_double(const std::string& a)
         i = 1;
     if (i == a.length())
         return false;
-    int f = a.find('.');
+    size_t f = a.find('.');
     for (;i < f; i++)
         if (!isdigit(a[i]))
             return false;
@@ -80,7 +81,7 @@ bool ScalarConverter::is_float(const std::string& a)
         i = 1;
     if (i == a.length())
         return false;
-    int f = a.find('.');
+    size_t f = a.find('.');
     for (;i < f; i++)
         if (!isdigit(a[i]))
             return false;
@@ -98,14 +99,33 @@ bool   ScalarConverter::is_char(const std::string& a)
 {
     if (a.empty())
         return false;
-    for (int i = 0; i < a.length(); i++)
+    for (size_t i = 0; i < a.length(); i++)
         if (a[i] >= 32 && a[i] <= 126)
             return false;
     return true;
 }
 
+ScalarConverter::ScalarConverter() {}
+
+ScalarConverter::ScalarConverter(const std::string& a) : type(a) {}
 
 void ScalarConverter::convert(const std::string& type)
 {
-    
+    ScalarConverter a(type);
+    if (a.is_int(type))
+    {
+        std::cout << "Int: " << a.getInt() << std::endl;
+        if (a.is_char(type))
+            std::cout << "Char: " << a.getChar() << std::endl;
+        else   
+            std::cout << "Char: isn't printable" << std::endl;
+        std::cout << "Double: " << static_cast<double>(a.getDouble()) << std::endl;
+        std::cout << "Float: " << a.getFloat() << std::endl;
+    }
+    //else if (is_double(type))
+    //{
+    //    double val_double = a.getDouble(type);
+    //    std::cout << "The number is double type: " << val_double << std::endl;
+    //}
+        
 }

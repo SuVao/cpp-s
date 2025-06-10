@@ -1,5 +1,5 @@
 CC = c++
-NAME = Bureaucrat
+NAME = converter
 SRC_DIR = src
 OBJDIR = obj
 ASMDIR = asm

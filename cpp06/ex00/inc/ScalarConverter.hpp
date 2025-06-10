@@ -8,21 +8,30 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include <limits>
+#include <climits>
 
 class ScalarConverter
 {
 public:
-    ScalarConverter& operator=(const ScalarConverter& other); 
+    const std::string type;
+    ScalarConverter();
+   // ScalarConverter& operator=(const ScalarConverter& other); 
     ~ScalarConverter();
+    ScalarConverter(const std::string& a);
     static void    convert(const std::string& literal);
-    int getInt(const std::string& a);
-    double getDouble(const std::string& a);
-    float getFloat(const std::string& a);
-    char getChar(const std::string& a);
+  
+    char getChar();
+    bool is_char(const std::string& a);
+  
+    float getFloat();
+    bool is_float(const std::string& a);
+  
+    double getDouble();
+    bool is_double(const std::string& a);
+  
+    int  getInt();
     bool is_int(const std::string& a);
-
-    
 };
+
 
 #endif
