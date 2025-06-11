@@ -11,24 +11,24 @@ ScalarConverter::~ScalarConverter() { std::cout << "ScalarConverter destructor c
 
 int ScalarConverter::getInt()
 {
-   return static_cast<int>(std::strtol(type.c_str(), NULL, 10));
+    return (std::strtol(type.c_str(), NULL, 10));
 }
 
 double ScalarConverter::getDouble()
 {
-    return static_cast<double>(std::strtod(type.c_str(), NULL));    
+    return (std::strtod(type.c_str(), NULL));    
 }
 
 float ScalarConverter::getFloat()
 {
-    return static_cast<float>(std::strtof(type.c_str(), NULL));
+    return (std::strtof(type.c_str(), NULL));
 }
 
 char ScalarConverter::getChar()
 {
     if (type.length() == 3 && type[0] == '\'' && type[2] == '\'')
         return type[1];
-    return static_cast<char>(type[0]);
+    return (type[0]);
 }
 
 bool ScalarConverter::is_int(const std::string& a)
@@ -100,9 +100,9 @@ bool   ScalarConverter::is_char(const std::string& a)
     if (a.empty())
         return false;
     for (size_t i = 0; i < a.length(); i++)
-        if (a[i] >= 32 && a[i] <= 126)
+        if (a[i] < 32 && a[i] > 126)
             return false;
-    return true;
+    return false;
 }
 
 ScalarConverter::ScalarConverter() {}
@@ -114,18 +114,19 @@ void ScalarConverter::convert(const std::string& type)
     ScalarConverter a(type);
     if (a.is_int(type))
     {
-        std::cout << "Int: " << a.getInt() << std::endl;
+        std::cout << "Int: " << static_cast<int>(a.getInt()) << std::endl;
         if (a.is_char(type))
-            std::cout << "Char: " << a.getChar() << std::endl;
+            std::cout << "Char: " << static_cast<char>(a.getChar()) << std::endl;
         else   
             std::cout << "Char: isn't printable" << std::endl;
         std::cout << "Double: " << static_cast<double>(a.getDouble()) << std::endl;
-        std::cout << "Float: " << a.getFloat() << std::endl;
+        std::cout << "Float: " << static_cast<float>(a.getFloat()) << std::endl;
     }
-    //else if (is_double(type))
-    //{
-    //    double val_double = a.getDouble(type);
-    //    std::cout << "The number is double type: " << val_double << std::endl;
-    //}
+    else if (a.is_double(type))
+    {
+        std::cout << "Int: " << a.getInt() << std::endl;
+        
+       // std::cout << "The number is double type: " << val_double << std::endl;
+    }
         
 }
