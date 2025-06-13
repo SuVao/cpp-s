@@ -30,11 +30,6 @@ int main(int argc, char* argv[])
         std::cerr << "Usage: ./convert <literal_value>" << std::endl;
         return 1;
     }
-
-    int i = 98;
-
-    std::cout << static_cast<char>(i) << std::endl;
-
     ScalarConverter::convert(argv[1]);
     return 0;
 }
