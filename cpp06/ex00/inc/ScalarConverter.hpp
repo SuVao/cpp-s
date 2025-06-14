@@ -21,16 +21,20 @@ public:
     ScalarConverter(const std::string& a);
     static void    convert(const std::string& literal);
     char getChar();
-    bool is_char(const std::string& a);
+    bool is_char();
   
     float getFloat();
-    bool is_float(const std::string& a);
+    bool is_float();
   
     double getDouble();
-    bool is_double(const std::string& a);
+    bool is_double();
    
     int  getInt();
-    bool is_int(const std::string& a);
+    bool is_int();
+
+    bool is_pseudo();
+    void Display_pseudo();
+
 };
 
 
