@@ -1,5 +1,5 @@
 CC = c++
-NAME = Whatever
+NAME = Iter
 SRC_DIR = src
 OBJDIR = obj
 ASMDIR = asm
