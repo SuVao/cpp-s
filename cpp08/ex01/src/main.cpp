@@ -5,8 +5,8 @@ int main()
 {
 	try
 	{
-		Span sp(5); // Cria um Span com capacidade para 5 números
-
+		Span sp(5);
+		
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
@@ -15,6 +15,15 @@ int main()
 
 		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
 		std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
+		Span o(10);
+		o.addNumber(10);
+		o.addNumber(10);
+		o.addNumber(10);
+		o.addNumber(10);
+		o.addNumber(10);
+		o.addNumber(10);
+		o.addMultiple(7);
+		std::cout << "Longest Span: " << o.longestSpan() << std::endl;
 	}
 	catch (const std::exception &e)
 	{

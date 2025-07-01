@@ -9,7 +9,6 @@
 #include <iostream>
 #include <algorithm>
 
-
 class Span
 {
 private:
@@ -21,18 +20,26 @@ public:
 	void addNumber(int nb);
 	int shortestSpan();
 	int longestSpan();
+	void addMultiple(unsigned int nbrs);
 	class error : public std::exception
 	{
-		const char* what() throw()
+		virtual const char* what() const throw()
 		{
 			return "The store is full\n";
 		}
 	};
 	class error_empty : public std::exception
 	{
-		const char* what() throw()
+		virtual const char* what() const throw()
 		{
 			return "The store don't have elements enough!\n";
+		}
+	};
+	class error_nbrs : public std::exception
+	{
+		virtual const char* what() const throw()
+		{
+			return "Too many numbers for the store\n";
 		}
 	};
 

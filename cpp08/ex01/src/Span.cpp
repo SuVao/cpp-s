@@ -41,3 +41,14 @@ int Span::longestSpan()
 	int max = *std::max_element(store.begin(), store.end());
 	return max - min;
 }
+
+void Span::addMultiple(unsigned int nbrs)
+{
+	if (store.size() + nbrs > store.capacity())
+		throw error_nbrs();
+	for (unsigned int i = 0; i < nbrs; i++)
+	{
+		int o = std::rand() % 1000;
+		store.push_back(o);
+	}
+}
