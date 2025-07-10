@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include <limits>
 #include <climits>
 #include <iomanip>
 
@@ -16,7 +17,6 @@ class ScalarConverter
     const std::string type1;
 public:
     ScalarConverter();
-   // ScalarConverter& operator=(const ScalarConverter& other); 
     ~ScalarConverter();
     ScalarConverter(const std::string& a);
     static void    convert(const std::string& literal);
@@ -34,6 +34,7 @@ public:
 
     bool is_pseudo();
     void Display_pseudo();
+    bool limits();
 
 };
 
